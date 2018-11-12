@@ -13,7 +13,9 @@ import Footer from '../components/Footer'
 
 import axios from 'axios'
 
-const URL = 'http://localhost:3000/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 class Routes extends Component {
     constructor(props) {
