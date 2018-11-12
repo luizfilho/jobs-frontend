@@ -10,7 +10,9 @@ import cidades from '../utils/cidades.json';
 import areaAt from '../utils/areaAt.json'
 import '../css/vagas.css' 
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 class Home extends Component {
 

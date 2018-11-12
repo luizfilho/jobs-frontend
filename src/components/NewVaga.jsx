@@ -13,7 +13,9 @@ import tipoVaga from '../utils/tipoVaga.json'
 import '../css/pageHeader.css'
 import '../css/newVaga.css'
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 function FieldGroup({ id, label, ...props }) {
     return (

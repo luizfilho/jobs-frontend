@@ -47,14 +47,14 @@ class Routes extends Component {
                 <div>
                     <CustomNavDev />
                         {/* Sem Validacao de Token */}
-                         <Route exact path='/' component={Home} />
+                         {/* <Route exact path='/' component={Home} />
                         <Route exact path='/vaga/:id' component={Vaga} />
                         <Route exact path='/myAccount/' component={Account} />
                         <Route exact path='/myAccount/newUser' component={NewUser} />
                         <Route exact path='/myAccount/login' component={Login} />
-                        <Route exact path='/newVaga' component={NewVaga} />
+                        <Route exact path='/newVaga' component={NewVaga} /> */}
                          {/* COM Validacao de Token */}
-                    {/* <Switch>
+                    <Switch>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/vaga/:id' component={Vaga} />
                         {
@@ -75,7 +75,7 @@ class Routes extends Component {
                         <Route exact path='/myAccount/newUser' component={NewUser} />
                         <Route exact path='/myAccount/login' component={Login} />
                         <Redirect from ='*' to='/'/>
-                    </Switch> */}
+                    </Switch>
                     <Footer/>
                 </div>
             </Router>

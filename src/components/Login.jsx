@@ -3,7 +3,11 @@ import { Grid, Row, Col, FormGroup, ControlLabel, FormControl, Button, HelpBlock
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../css/MyAccount.css'
-const URL = 'http://localhost:3003/api'
+
+
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 
 function FieldGroup({ id, label, ...props }) {

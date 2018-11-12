@@ -5,7 +5,9 @@ import Jumbotron from '../template/Jumbotron'
 import MaskedFormControl from 'react-bootstrap-maskedinput'
 import axios from 'axios'
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 function FieldGroup({ id, label, ...props }) {
     return (

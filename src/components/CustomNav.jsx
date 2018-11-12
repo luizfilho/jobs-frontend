@@ -5,7 +5,9 @@ import axios from 'axios'
 import '../css/customNav.css'
 import '../css/pageHeader.css'
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 export default class CustomNav extends Component {
     constructor(props) {

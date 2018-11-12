@@ -4,7 +4,9 @@ import Jumbotron from '../template/Jumbotron'
 import axios from 'axios'
 import '../css/Account.css'
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 function FieldGroup({ id, label, ...props }) {
     return (

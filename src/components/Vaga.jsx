@@ -8,7 +8,9 @@ import areaAt from '../utils/areaAt.json'
 import '../css/jumb.css'
 import '../css/vaga.css'
 
-const URL = 'http://localhost:3003/api'
+import consts from '../consts'
+
+const URL = consts.API_URL
 
 class Vaga extends Component {
     constructor(props) {
