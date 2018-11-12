@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/frontend-advagas/precache-manifest.3ce5a8bc1b7dbbfc61b310b09105493e.js"
+  "/frontend-advagas/precache-manifest.9d44335b147d558725bbdefd3ec2d402.js"
 );
 
 workbox.clientsClaim();

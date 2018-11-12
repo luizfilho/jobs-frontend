@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/frontend-advagas/static/js/runtime~main.07d20e6e.js"
   },
   {
-    "revision": "31f9cb69d63690619e65",
-    "url": "/frontend-advagas/static/js/main.31f9cb69.chunk.js"
+    "revision": "c719687cd944dc5248b4",
+    "url": "/frontend-advagas/static/js/main.c719687c.chunk.js"
   },
   {
     "revision": "81e958688fed0451253f",
     "url": "/frontend-advagas/static/js/1.81e95868.chunk.js"
   },
   {
-    "revision": "31f9cb69d63690619e65",
+    "revision": "c719687cd944dc5248b4",
     "url": "/frontend-advagas/static/css/main.d9db5a47.chunk.css"
   },
   {
-    "revision": "92e771c3b6cd57a146590ea53d79a095",
+    "revision": "25ec303f1002564218f8ea2dcd0f7732",
     "url": "/frontend-advagas/index.html"
   }
 ];
