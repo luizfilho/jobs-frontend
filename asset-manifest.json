@@ -1,13 +1,13 @@
 {
   "main.css": "/frontend-advagas/static/css/main.d9db5a47.chunk.css",
-  "main.js": "/frontend-advagas/static/js/main.c719687c.chunk.js",
-  "main.js.map": "/frontend-advagas/static/js/main.c719687c.chunk.js.map",
+  "main.js": "/frontend-advagas/static/js/main.4626c1ba.chunk.js",
+  "main.js.map": "/frontend-advagas/static/js/main.4626c1ba.chunk.js.map",
   "static/js/1.81e95868.chunk.js": "/frontend-advagas/static/js/1.81e95868.chunk.js",
   "static/js/1.81e95868.chunk.js.map": "/frontend-advagas/static/js/1.81e95868.chunk.js.map",
   "runtime~main.js": "/frontend-advagas/static/js/runtime~main.07d20e6e.js",
   "runtime~main.js.map": "/frontend-advagas/static/js/runtime~main.07d20e6e.js.map",
   "static/css/main.d9db5a47.chunk.css.map": "/frontend-advagas/static/css/main.d9db5a47.chunk.css.map",
   "index.html": "/frontend-advagas/index.html",
-  "precache-manifest.9d44335b147d558725bbdefd3ec2d402.js": "/frontend-advagas/precache-manifest.9d44335b147d558725bbdefd3ec2d402.js",
+  "precache-manifest.9673ecbbddee1ab12dd8c58792303fbd.js": "/frontend-advagas/precache-manifest.9673ecbbddee1ab12dd8c58792303fbd.js",
   "service-worker.js": "/frontend-advagas/service-worker.js"
 }
