@@ -1,0 +1,27 @@
+.panel-body {
+    background-color: #D3D3D3;
+    color: black;
+}
+.panel-body:hover{
+    background-color: #C0C0C0;
+}
+.nomeCont{
+    color:#269abc;
+}
+
+.tipoVaga{
+    font-size:18px;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: #c62620;
+    color:#fff;
+}
+
+.panel-info {
+   background-color: black
+}
+
+.vaga:hover{
+    text-decoration-line:none;
+}
+

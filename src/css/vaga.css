@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300');
+.vaga{
+    font-family: 'Oswald', sans-serif;
+}
+.title_cont{
+    color: #fff;
+    border-radius: 3px;
+    padding: 15px;
+    background: linear-gradient(to right, #286f90 0, #1d5068 100%);
+}
+
+p{
+    font-size: 30px;
+}
+p > span{
+    font-weight: 100;
+}

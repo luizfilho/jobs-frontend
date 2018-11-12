@@ -1,0 +1,42 @@
+[
+    {
+        "ID":"1",
+        "areaAt":"Direito ambiental"
+    },
+    {
+        "ID":"2",
+        "areaAt":"Direito civil"
+    },
+    {
+        "ID":"3",
+        "areaAt":"Direito comercial"
+    },
+    {
+        "ID":"4",
+        "areaAt":"Direito constitucional"
+    },
+    {
+        "ID":"5",
+        "areaAt":"Direito do consumidor"
+    },
+    {
+        "ID":"6",
+        "areaAt":"Direito empresarial"
+    },
+    {
+        "ID":"7",
+        "areaAt":"Direito penal"
+    },
+    {
+        "ID":"8",
+        "areaAt":"Direito trabalhista"
+    },
+    {
+        "ID":"9",
+        "areaAt":"Direito tributário"
+    },
+    {
+        "ID":"10",
+        "areaAt":"Juridico"
+    }
+]

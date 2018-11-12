@@ -1,0 +1,22 @@
+[
+    {
+        "ID":"1",
+        "tipoVaga":"Estágio"
+    },
+    {
+        "ID":"2",
+        "tipoVaga":"Advogado(a)"
+    },
+    {
+        "ID":"3",
+        "tipoVaga":"Advogado(a) associado(a)"
+    },
+    {
+        "ID":"4",
+        "tipoVaga":"Sócio de Serviço"
+    },
+    {
+        "ID":"5",
+        "tipoVaga":"Sócio"
+    }
+]

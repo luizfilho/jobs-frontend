@@ -1,0 +1,23 @@
+/* @import url('https://fonts.googleapis.com/css?family=Oswald'); */
+.jumbotron .h1, .jumbotron h1 {
+    font-family: 'Oswald', sans-serif;
+    color:#fff;
+    font-size: 40px;
+    text-align: center;
+}
+
+.jumbotron .span, .jumbotron span {
+    font-family: 'Oswald', sans-serif;
+    color:#fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    /* color: inherit; */
+    background: linear-gradient(to right, #286f90 0, #1d5068 100%)
+    
+}

@@ -1,0 +1,16 @@
+footer {
+    height: 65px;
+    background-color: #123140 !important;
+}
+
+.titleFooter{
+    margin-top: 50%;
+    /* margin-left: 50%; */
+    font-size: 15px;
+    color:#FFF;
+}
+
+.footerCont{
+    padding: 20px;
+    text-align: center;
+}
