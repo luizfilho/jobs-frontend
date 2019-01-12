@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-class Vaga extends Component {
+class MyAccount extends Component {
     render() {
         return (
             <div>
-                1
+                <h1>Area Protegida</h1>
             </div>
         );
     }
 }
 
-
-export default Vaga;
+export default MyAccount;

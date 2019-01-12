@@ -1,17 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300');
 .vaga{
-    font-family: 'Oswald', sans-serif;
-}
-.title_cont{
-    color: #fff;
-    border-radius: 3px;
-    padding: 15px;
-    background: linear-gradient(to right, #286f90 0, #1d5068 100%);
+    color:#FFF;
 }
 
-p{
-    font-size: 30px;
+.vaga p{
+    color:#fff;
+    font-size: 32px;
 }
-p > span{
-    font-weight: 100;
+.vaga span{
+    color:#ccc;
+    font-size: 25px;
 }
+
+.btnControl {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.btnEdit button{
+    padding: 10px 140px;
+    color:#fff;
+    border-radius: 0%; 
+    background-color: transparent;
+    border: 2px solid #FFFF66;
+}
+
+.btnDel button{
+    padding: 10px 140px;
+    color:#fff;
+    border-radius: 0%; 
+    background-color: transparent;
+    border: 2px solid #C70726;
+    margin-bottom: 20px;
+}
+
+

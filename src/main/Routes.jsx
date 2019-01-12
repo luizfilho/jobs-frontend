@@ -1,84 +1,45 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
 
 import Home from '../components/Home'
 import NewVaga from '../components/NewVaga'
 import Vaga from '../components/Vaga'
-import Login from '../components/Login'
-import Account from '../components/Account'
-import CustomNav from '../components/CustomNav'
-import CustomNavDev from '../components/CustomNavDev'
-import NewUser from '../components/NewUser';
-import Footer from '../components/Footer'
+import Auth from '../components/Auth'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
-import axios from 'axios'
+import * as actions from '../actions'
 
-import consts from '../consts'
-
-const URL = consts.API_URL
 
 class Routes extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            tokenValid: undefined
-        }
-    }
-
-    componentWillMount() {
-        this.verifyToken()
-    }
-
-    verifyToken() {
-        const token = localStorage.getItem('token')
-        axios.get(`${URL}/auth/me`, { headers: { 'authorization': `${token}` } })
-            .then(res => {
-                console.log(res)
-                if (res.data.sucess === true) {
-                    this.setState({ tokenValid: true })
-                }else{
-                    this.setState({ tokenValid: false })
-                }
-            }
-            )
-    }
     render() {
-        const { tokenValid } = this.state;
+        // const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+        //     return (
+        //         <Route {...rest} render={(props) =>
+        //             authed
+        //                 ? (<Component {...props} />)
+        //                 : (<Redirect to={{ pathname: '#1/auth', state: { from: props.location } }} />
+        //                 )
+        //             }
+        //         />
+        //     )
+        // }
+
+        function PrivateRoute({ component: Component, authed, ...rest }){
+            return(
+                authed 
+                ? <Route {...rest} render={props => <Component {...props}/>
+                : <Redirect path='/' />
+            )
+        }
+        console.log(this.props)
         return (
             <Router >
                 <div>
-                    <CustomNavDev />
-                        {/* Sem Validacao de Token */}
-                         {/* <Route exact path='/' component={Home} />
-                        <Route exact path='/vaga/:id' component={Vaga} />
-                        <Route exact path='/myAccount/' component={Account} />
-                        <Route exact path='/myAccount/newUser' component={NewUser} />
-                        <Route exact path='/myAccount/login' component={Login} />
-                        <Route exact path='/newVaga' component={NewVaga} /> */}
-                         {/* COM Validacao de Token */}
-                    <Switch>
-                        <Route exact path='/' component={Home} />
-                        <Route exact path='/vaga/:id' component={Vaga} />
-                        {
-                            tokenValid === false ?
-                                (<Route exatc path='/newVaga' component={Login} />)
-                                :
-                                (<Route exact path='/newVaga' component={NewVaga} />)
-                        }
-
-                        {
-                            tokenValid === false ? 
-                            (<Route exact path='/myAccount' component={Login} />)
-                            :
-                            (<Route exact path='/myAccount/' component={Account} />)
-
-                        }
-
-                        <Route exact path='/myAccount/newUser' component={NewUser} />
-                        <Route exact path='/myAccount/login' component={Login} />
-                        <Redirect from ='*' to='/'/>
-                    </Switch>
-                    <Footer/>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/vaga/:id' component={Vaga} />
+                    <Route exact path='/auth' component={Auth} />
+                    <PrivateRoute exact path='newVaga' authed={this.props.isAuthenticated} component={NewVaga} />
                 </div>
             </Router>
         )
@@ -86,4 +47,14 @@ class Routes extends Component {
 
 }
 
-export default Routes;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+const mapDispatchToProps = dispatch => {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Routes)

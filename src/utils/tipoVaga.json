@@ -1,22 +1,22 @@
 [
     {
         "ID":"1",
-        "tipoVaga":"Estágio"
+        "TipoVaga":"Estágio"
     },
     {
         "ID":"2",
-        "tipoVaga":"Advogado(a)"
+        "TipoVaga":"Advogado(a)"
     },
     {
         "ID":"3",
-        "tipoVaga":"Advogado(a) associado(a)"
+        "TipoVaga":"Advogado(a) associado(a)"
     },
     {
         "ID":"4",
-        "tipoVaga":"Sócio de Serviço"
+        "TipoVaga":"Sócio de Serviço"
     },
     {
         "ID":"5",
-        "tipoVaga":"Sócio"
+        "TipoVaga":"Sócio"
     }
 ]

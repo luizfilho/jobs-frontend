@@ -1,0 +1,55 @@
+.listVagas{
+    height: 100%;
+    border:2px solid #fff;
+    padding: 25px;
+    margin: 10px;
+}
+
+.listVagas:hover, {
+    text-decoration-line: none;
+}
+
+.listVagas a:hover {
+    text-decoration-line: none;
+}
+
+.tipoVaga{
+    padding: 5px;
+    background-color: #C70726;
+    border-radius: 3px;
+    color:#FFF;
+    font-weight: 600;   
+    font-size: 16px;
+}
+
+.detalhes {
+    margin-top: 8px;
+    color: #FFF;
+    font-size: 15px;
+}
+
+.btnsVaga{
+    margin-top:10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.btnsVaga button{
+    padding: 10px;
+    color:#fff;
+    border-radius: 0%; 
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btnsVaga button:hover{
+    color:#fff !important;
+}
+.btnsVaga .edit {
+    border: 2px solid #FFFF66;
+}
+
+.btnsVaga .del {
+    border: 2px solid #C70726;
+}

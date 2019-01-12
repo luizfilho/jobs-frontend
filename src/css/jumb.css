@@ -1,23 +1,17 @@
-/* @import url('https://fonts.googleapis.com/css?family=Oswald'); */
-.jumbotron .h1, .jumbotron h1 {
-    font-family: 'Oswald', sans-serif;
-    color:#fff;
-    font-size: 40px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+.myJumb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:2px solid #444F59;
     text-align: center;
+    margin:0;
 }
 
-.jumbotron .span, .jumbotron span {
-    font-family: 'Oswald', sans-serif;
+.title{
+    font-size: 50px;
     color:#fff;
-    font-size: 30px;
-    text-align: center;
-}
+    font-family: 'Open Sans Condensed', sans-serif;
+}   
 
-.jumbotron {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    /* color: inherit; */
-    background: linear-gradient(to right, #286f90 0, #1d5068 100%)
-    
-}

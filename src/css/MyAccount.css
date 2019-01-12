@@ -1,9 +1,0 @@
-.btn-block {
-    display: block;
-    width: 70%;
-}
-
-@media (min-width: 992px){.col-md-offset-6 {
-    margin-left: 58%;
-}
-}

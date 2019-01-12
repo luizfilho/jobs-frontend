@@ -1,0 +1,35 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10px auto;
+}
+
+.authForm input {
+    margin:2px;
+
+}
+
+.search-btn{
+    margin-top: 25px;
+}
+
+.loginMode{
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;  
+    text-align: center;
+    font-size: 18px;
+}
+
+.loginMode span {
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    color:#fff;
+}
+
+.loginMode span, .loginMode:hover {
+    text-decoration: none;
+    color:#fff;
+}

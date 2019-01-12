@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import { Jumbotron } from 'react-bootstrap'
+import React from 'react';
 import '../css/jumb.css'
+const Jumb = props => {
+    return (
+        <div className='myJumb'>
+            <h1 className="title">{props.title} </h1>
+            <p className='subTitle'>{props.subTitle}</p>
+        </div>
+    );
+};
 
-export default class Junbt extends Component {
-    render() {
-        return (
-            <div>
-                <Jumbotron >
-                    <span>{this.props.subTitle}</span>
-                    <h1 style={{ color: '#fff' }}>{this.props.title}</h1>
-                    <p>{this.props.detalhes}</p>
-                </Jumbotron>
-            </div>
-        );
-    }
-}
-
+export default Jumb;

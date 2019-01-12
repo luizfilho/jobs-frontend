@@ -1,0 +1,9 @@
+export const CREATE = 'CREATE';
+export const INITIAL = 'INITIAL';
+export const CARREGAR_CIDADES = 'CARREGAR_CIDADES';
+export const HANDLE_INPUT_CHANGE = 'HANDLE_INPUT_CHANGE';
+export const SEARCH_VAGAS = 'SEARCH_VAGAS';
+export const GET_VAGAS = 'GET_VAGAS';
+export const USER_FETCHED = 'USER_FETCHED';
+export const AUTHERROR = 'AUTHERROR';
+export const TOKEN_VALIDATE = 'TOKEN_VALIDATE';
