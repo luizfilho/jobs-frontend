@@ -6,6 +6,6 @@ import '../css/app.css'
 export default () => (
     <div >
         <CustomNav/>
-        <Routes />
+        <Routes logged={123}/>
     </div>
 )

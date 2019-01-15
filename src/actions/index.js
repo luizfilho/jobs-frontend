@@ -6,7 +6,6 @@ import cidades from '../utils/cidades.json';
 import axios from 'axios';
 import consts from '../consts';
 
-const URL = consts.API_URL;
 
 export const carregarCidades = e => {
     if (e.target.value === "") {
@@ -49,7 +48,7 @@ export const handleInputChange = e => {
 }
 
 export const searchVagas = filtro => {
-    const request = axios.post(`${URL}/oapi/vaga`, filtro)
+    const request = axios.post(`${consts.OAPI_URL}/vaga`, filtro)
     return {
         type: actionsType.SEARCH_VAGAS,
         payload: request
@@ -57,7 +56,7 @@ export const searchVagas = filtro => {
 }
 
 export const getVagas = () => {
-    const request = axios.get(`${URL}/oapi/vagas`)
+    const request = axios.get(`${consts.OAPI_URL}/vagas`)
     return {
         type: actionsType.GET_VAGAS,
         payload: request
@@ -65,7 +64,9 @@ export const getVagas = () => {
 }
 
 export const create = values => {
-    const request = axios.post(`${URL}/api/`)
+    values.idUser = 'jessica'
+    console.log(values)
+    const request = axios.post(`${consts.OAPI_URL}/api/`)
     return {
         type: actionsType.CREATE,
         payload: request

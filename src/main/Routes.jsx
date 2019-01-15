@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
 import Home from '../components/Home'
 import NewVaga from '../components/NewVaga'
 import Vaga from '../components/Vaga'
 import Auth from '../components/Auth'
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
+import MyAccount from '../components/MyAccount';
 
-import * as actions from '../actions'
+import { validateToken } from '../actions/authActions'
 
-
+const PrivateRoute = ({ component: Component, authed = false, ...rest }) => {
+    return (
+        <Route
+            {...rest}
+            render={props => authed ? (
+                <Component {...props} />
+            ) :
+                (<Redirect to='/auth' />)
+            }
+        />
+    )
+}
 class Routes extends Component {
-    render() {
-        // const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-        //     return (
-        //         <Route {...rest} render={(props) =>
-        //             authed
-        //                 ? (<Component {...props} />)
-        //                 : (<Redirect to={{ pathname: '#1/auth', state: { from: props.location } }} />
-        //                 )
-        //             }
-        //         />
-        //     )
-        // }
 
-        function PrivateRoute({ component: Component, authed, ...rest }){
-            return(
-                authed 
-                ? <Route {...rest} render={props => <Component {...props}/>
-                : <Redirect path='/' />
-            )
+    componentWillMount() {
+        const { user, validateToken } = this.props;
+        if (user) {
+            validateToken(user.token)
         }
+    }
+    render() {
+        const { logged } = this.props;
         console.log(this.props)
         return (
             <Router >
@@ -39,22 +40,21 @@ class Routes extends Component {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/vaga/:id' component={Vaga} />
                     <Route exact path='/auth' component={Auth} />
-                    <PrivateRoute exact path='newVaga' authed={this.props.isAuthenticated} component={NewVaga} />
+
+                    {/* Aréas Fechadas */}
+                    <PrivateRoute path='/newVaga' authed={logged} component={NewVaga} />
+                    <PrivateRoute path='/myAccount' authed={logged} component={MyAccount} />
                 </div>
             </Router>
         )
     }
-
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    logged: state.auth.validToken,
+    user: state.auth.user
 })
 
-const mapDispatchToProps = dispatch => {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    }
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ validateToken }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Routes)

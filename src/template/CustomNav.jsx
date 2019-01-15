@@ -21,8 +21,7 @@ class CustomNav extends React.Component {
   }
 
   render() {
-    const { logged } = this.state;
-    const { logout } = this.props;
+    const { validToken,logout } = this.props;
     return (
 
       <div>
@@ -43,10 +42,10 @@ class CustomNav extends React.Component {
             </NavItem>
             <NavItem >
               {
-                !logged ?
+                !validToken ?
                   <NavLink href="#auth">Entrar</NavLink>
                   :
-                  <NavLink href="#" onClick={logout} > Sair </NavLink>
+                  <NavLink href="/" onClick={logout} > Sair </NavLink>
               }
             </NavItem>
           </Nav>
@@ -57,6 +56,8 @@ class CustomNav extends React.Component {
   }
 }
 
-
 const mapDispatchToProps = dispatch => bindActionCreators({ logout }, dispatch)
-export default connect(null, mapDispatchToProps)(CustomNav)
+const mapStateToProps = state =>({
+  validToken: state.auth.validToken
+})
+export default connect(mapStateToProps, mapDispatchToProps)(CustomNav)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Button} from 'reactstrap'
+import { Container, Row, Button } from 'reactstrap'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { reduxForm, Field, formValueSelector } from 'redux-form'
@@ -11,7 +11,6 @@ import tipoVaga from '../utils/tipoVaga.json'
 import remu from '../utils/remuneracao.json'
 import areaAt from '../utils/areaAt.json'
 import op from '../utils/op.json'
-
 
 import Jumbotron from '../template/Jumbotron'
 import { customInput, maskedInput, select } from '../common/customInputs'
@@ -39,9 +38,9 @@ class NewVaga extends Component {
                             component={select}
                             items={tipoVaga}
                             typeValue='TipoVaga'
-                            placeholder="Tipo de Vaga" 
+                            placeholder="Tipo de Vaga"
                             change={false}
-                            />
+                        />
                         <Field
                             sm={3}
                             label='Remuneração *'
@@ -93,7 +92,7 @@ class NewVaga extends Component {
                             name='emailCont'
                             type='email'
                             component={customInput} />
-                       
+
 
                         <Field
                             sm={4}
@@ -112,6 +111,8 @@ class NewVaga extends Component {
 }
 
 const selector = formValueSelector('newVagaForm');
+
+
 const mapStateToProps = state => {
     return {
         estadoSelected: selector(state, 'estado')

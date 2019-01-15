@@ -33,3 +33,9 @@
     text-decoration: none;
     color:#fff;
 }
+
+.errors{
+    color:#fff;
+    padding: 5px;
+    border-bottom: 3px solid #ffff;
+}

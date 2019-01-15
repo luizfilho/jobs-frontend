@@ -7,7 +7,7 @@ import { Container, Row, Button } from 'reactstrap'
 import { inputAuth } from '../common/customInputs'
 import Jumbotron from '../template/Jumbotron'
 
-import * as actions from '../actions'
+import { login, signup } from '../actions/authActions'
 
 class Auth extends Component {
     constructor(props) {
@@ -20,21 +20,34 @@ class Auth extends Component {
     }
 
     onSubmit(values) {
-        const { login, signup } = this.props.actions
-        
+        const { login, signup } = this.props
         this.state.loginMode ? login(values) : signup(values)
+    }
+    goHome(validToken) {
+        if (validToken) this.props.history.push('/')
     }
 
     render() {
         const { loginMode } = this.state
-        const { handleSubmit } = this.props
-     
+        const { handleSubmit, msgError, validToken } = this.props
+        console.log(this.props)
         return (
             <Container >
                 <Row>
                     <Jumbotron title='Seja Bem vindo(a) - Jobs' />
                 </Row>
+
+                {validToken ? this.goHome(true) : this.goHome(false)}
+
                 <div className="auth">
+                    {
+                        msgError ?
+                            <div className="errors">
+                                <span>{msgError}</span>
+                            </div>
+                            :
+                            ''
+                    }
                     <form onSubmit={handleSubmit(v => this.onSubmit(v))} className="authForm">
                         <Row>
                             <Field
@@ -72,7 +85,11 @@ class Auth extends Component {
                         </Row>
 
                         <Row className='search-btn'>
-                            <Button> Cadastrar</Button>
+                            <Button> 
+                                 {loginMode ?
+                                'Entrar' :
+                                'Cadastrar'
+                                }</Button>
                         </Row>
                     </form>
 
@@ -89,12 +106,13 @@ class Auth extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    }
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ login, signup },
+    dispatch)
 
-export default connect(null,mapDispatchToProps)(
+const mapStateToProps = state => ({
+    msgError: state.auth.msgError,
+    validToken: state.auth.validToken
+})
+export default connect(mapStateToProps, mapDispatchToProps)(
     reduxForm({ form: 'authForm' })(Auth)
 )

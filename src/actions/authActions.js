@@ -11,10 +11,12 @@ export const signup = values => {
     return submit(values, `${consts.OAPI_URL}/signup`)
 }
 
-export function logout() {
+export const logout = () => {
     return { type: actionsType.TOKEN_VALIDATE, payload: false }
 }
+
 function submit(values, url) {
+
     return dispatch => {
         axios.post(url, values)
             .then(resp => {
@@ -24,7 +26,7 @@ function submit(values, url) {
             })
             .catch(err => {
                 dispatch([
-                    { type: actionsType.AUTHERROR, payload: err }
+                    { type: actionsType.AUTHERROR, payload: err.response }
                 ])
             })
     }
